@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ANAND M | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    header.navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+      padding: 15px 30px;
+    }
+    header.navbar h1.logo {
+      margin: 0;
+      font-size: 24px;
+      color: #00bfff;
+    }
+    nav a {
+      color: #ccc;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #00bfff;
+    }
+
+    .hero {
+      padding: 100px 20px;
+      background-color: #181818;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+      color: #ccc;
+    }
+    .hero .scroll-down {
+      margin-top: 30px;
+      font-size: 24px;
+      display: inline-block;
+      color: #00bfff;
+      text-decoration: none;
+    }
+
+    .projects-section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      background-color: #1e1e1e;
+    }
+    .projects-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #f0f0f0;
+    }
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .filter-buttons button {
+      padding: 10px 15px;
+      margin: 5px;
+      cursor: pointer;
+      background-color: #2a2a2a;
+      color: #ccc;
+      border: none;
+      border-radius: 6px;
+    }
+    .filter-buttons button:hover {
+      background-color: #00bfff;
+      color: #fff;
+    }
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .project-card {
+      background-color: #2a2a2a;
+      border-radius: 12px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      text-align: center;
+      color: #ccc;
+    }
+    .project-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .tags span {
+      background-color: #444;
+      border-radius: 5px;
+      padding: 5px 8px;
+      font-size: 12px;
+      margin: 2px;
+      display: inline-block;
+      color: #eee;
+    }
+
+    #skills-education {
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+    }
+    #skills-education .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 40px;
+    }
+    #skills-education .left, #skills-education .right {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
+    #skills-education h2 {
+      border-bottom: 2px solid #444;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .skill-section p {
+      margin: 6px 0;
+    }
+    .icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .icon-grid i, .icon-grid img {
+      background-color: #2d2d2d;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 24px;
+      color: white;
+    }
+    .edu-cert {
+      margin-bottom: 30px;
+    }
+    .edu-cert .item {
+      margin-bottom: 15px;
+    }
+    .edu-cert strong {
+      display: block;
+      font-size: 1.05em;
+    }
+    .edu-cert small {
+      color: #aaa;
+    }
+
+    #about {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #181818;
+    }
+    #about h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #contact {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #1e1e1e;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #444;
+      border-radius: 6px;
+      background-color: #2d2d2d;
+      color: #f0f0f0;
+    }
+    form input[type="submit"] {
+      background-color: #00bfff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      #skills-education .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <h1 class="logo">ANAND M</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills-education">Skills & Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Hey, I’m ANAND M</h1>
+    <p>Data Scientist, Data Analyst, and Storyteller of Numbers.<br>
+    Probability Enthusiast, and Curious Thinker with a love for decoding complex data into meaningful insights.</p>
+    <p>Working with my mind and hands to find clarity in complexity.<br>
+    Explore My <strong>Projects</strong>, <strong>Resume</strong>, or <strong>Contact</strong> Me to see how data can make a difference.</p>
+    <a href="#about" class="scroll-down">↓ More About Me</a>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m <strong>ANAND M</strong>, a passionate Data Analyst with a strong foundation in statistics, programming, and problem-solving. I specialize in turning complex data into clear, actionable insights that support business decisions and drive growth.</p>
+    <p>With hands-on experience in Python, SQL, Excel, Power BI, and Machine Learning, I’ve worked on impactful projects like building a SQL Chatbot for natural language data queries and implementing Realtime Object Detection systems. My strength lies in simplifying data for non-technical users while ensuring accuracy and clarity in every analysis.</p>
+    <p>I'm highly organized, detail-oriented, and continuously learning to stay ahead in the data-driven world. Whether it’s creating dashboards, automating reports, or analyzing trends, I enjoy using data to uncover stories that matter.</p>
+    <p>Let's connect and explore how data can solve real-world problems!</p>
+  </section>
+
+  <section id="skills-education">
+    <div class="container">
+      <div class="left">
+        <h2>My Skills</h2>
+        <div class="skill-section">
+          <p><strong>Language:</strong> Python</p>
+          <p><strong>Libraries:</strong> Pandas, Numpy, Matplotlib, Seaborn, Scikit-learn, Keras</p>
+          <p><strong>Tools:</strong> Power BI, Excel, Tableau</p>
+          <p><strong>Statistical Methods:</strong> Hypothesis Testing, Descriptive Statistics, Regression Analysis</p>
+          <p><strong>Platforms:</strong> PyCharm, Jupyter Notebook, VS Code</p>
+          <p><strong>Soft Skills:</strong> Research, Time Management, Adaptability, Communication</p>
+          <p><strong>Expertise:</strong> Data Analytics, Data Visualization, ML, Predictive Analytics</p>
+        </div>
+        <div class="icon-grid">
+          <i class="fa-brands fa-python"></i>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="40" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" width="40" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" width="40" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" width="40" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="40" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" />
+        </div>
+      </div>
+      <div class="right">
+        <h2>Education</h2>
+        <div class="edu-cert">
+          <div class="item">
+            <strong>B.Tech AI & Data Science</strong>
+            <small>2023–2027, JCT College, Coimbatore</small>
+          </div>
+        </div>
+        <h2>Certifications</h2>
+        <div class="edu-cert">
+          <div class="item"><strong>Google Data Analytics</strong><small>Coursera</small></div>
+          <div class="item"><strong>Internship - Data Analytics</strong><small>Skillfied Mentor</small></div>
+          <div class="item"><strong>GenAI Data Analytics Simulation</strong><small>Tata Forage</small></div>
+          <div class="item"><strong>Data Analytics Simulation</strong><small>Deloitte Forage</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-section" id="projects">
+    <h2>Transforming Data Into Insights: Projects</h2>
+    <div class="filter-buttons">
+      <button class="active">All Projects</button>
+      <button>Machine Learning</button>
+      <button>Data Analysis</button>
+      <button>SQL</button>
+      <button>Python</button>
+      <button>Excel</button>
+    </div>
+    <div class="projects-container">
+      <div class="project-card">
+        <a href="https://sqlchatbot-anand.streamlit.app/" target="_blank">
+          <img src="img/sqlchatbot.jpg" alt="SQL Chatbot">
+        </a>
+        <h3>SQL Chatbot</h3>
+        <div class="tags">
+          <span>Python</span>
+          <span>SQL</span>
+          <span>Flask</span>
+        </div>
+        <p>
+          A chatbot that converts natural language into SQL queries to retrieve data from databases.<br>
+          <a href="https://sqlchatbot-anand.streamlit.app/" target="_blank" style="color:#00bfff;">Try it Live ↗</a>
+        </p>
+      </div>
+      <div class="project-card">
+        <a href="https://github.com/anandm032/smart_vision" target="_blank">
+          <img src="img/realtimeobject.jpg" alt="Realtime Object Detection">
+        </a>
+        <h3>Realtime Object Detection</h3>
+        <div class="tags">
+          <span>Python</span>
+          <span>YOLO</span>
+          <span>OpenCV</span>
+        </div>
+        <p>
+          Detects and labels objects in real-time using a webcam feed and YOLO deep learning model.<br>
+          <a href="https://github.com/anandm032/smart_vision" target="_blank" style="color:#00bfff;">View on GitHub ↗</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> <a href="mailto:anandm15032005@gmail.com">anandm15032005@gmail.com</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/anandm032" target="_blank">github.com/anandm032</a></p>
+    <h3>Send a Message</h3>
+    <form action="mailto:anandm15032005@gmail.com" method="post" enctype="text/plain">
+      <label>Name:</label>
+      <input type="text" name="name" required>
+      <label>Email:</label>
+      <input type="email" name="email" required>
+      <label>Message:</label>
+      <textarea name="message" rows="5" required></textarea>
+      <input type="submit" value="Send">
+    </form>
+  </section>
+
+</body>
+</html>
